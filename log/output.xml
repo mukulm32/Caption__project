@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230131 13:38:08.634" rpa="false" schemaversion="3">
+<suite id="s1" name="Valid Login" source="C:\Users\40032341\Final_project\1_login_test\valid_login.robot">
+<test id="s1-t1" name="Valid login" line="20">
+<kw name="Launch Browser and Navigate to URL" library="common_function" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230131 13:38:10.144" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230131 13:38:10.144" endtime="20230131 13:38:13.078"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230131 13:38:13.078" endtime="20230131 13:38:13.258"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230131 13:38:13.258" endtime="20230131 13:38:13.271"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230131 13:38:13.272" level="INFO">Opening url 'https://www.opencart.com/'</msg>
+<status status="PASS" starttime="20230131 13:38:13.271" endtime="20230131 13:38:16.363"/>
+</kw>
+<status status="PASS" starttime="20230131 13:38:10.144" endtime="20230131 13:38:16.364"/>
+</kw>
+<kw name="Valaid login template">
+<arg>mukulmangde3@gmail.com</arg>
+<arg>123456789</arg>
+<arg>9881</arg>
+<arg>Account Details</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=Login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230131 13:38:16.367" level="INFO">Clicking element 'link=Login'.</msg>
+<status status="PASS" starttime="20230131 13:38:16.366" endtime="20230131 13:38:17.053"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=input-email</arg>
+<arg>${mail_id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230131 13:38:17.054" level="INFO">Typing text 'mukulmangde3@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20230131 13:38:17.053" endtime="20230131 13:38:17.227"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=input-password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230131 13:38:17.227" level="INFO">Typing password into text field 'id=input-password'.</msg>
+<msg timestamp="20230131 13:38:17.282" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230131 13:38:17.341" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230131 13:38:17.227" endtime="20230131 13:38:17.342"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[text()='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230131 13:38:17.342" level="INFO">Clicking element 'xpath=//button[text()='Login']'.</msg>
+<status status="PASS" starttime="20230131 13:38:17.342" endtime="20230131 13:38:28.660"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=input-pin</arg>
+<arg>${pin}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230131 13:38:28.662" level="INFO">Typing password into text field 'id=input-pin'.</msg>
+<msg timestamp="20230131 13:38:28.718" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230131 13:38:28.759" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230131 13:38:28.661" endtime="20230131 13:38:28.759"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[text()='Continue']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230131 13:38:28.760" level="INFO">Clicking element 'xpath=//button[text()='Continue']'.</msg>
+<status status="PASS" starttime="20230131 13:38:28.759" endtime="20230131 13:38:30.213"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//a[contains(text(),'Account Details')]</arg>
+<arg>${expected}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230131 13:38:30.260" level="INFO">Element 'xpath=//a[contains(text(),'Account Details')]' contains text 'Account Details'.</msg>
+<status status="PASS" starttime="20230131 13:38:30.213" endtime="20230131 13:38:30.260"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230131 13:38:35.268" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230131 13:38:30.261" endtime="20230131 13:38:35.269"/>
+</kw>
+<status status="PASS" starttime="20230131 13:38:16.364" endtime="20230131 13:38:35.269"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230131 13:38:35.270" endtime="20230131 13:38:37.495"/>
+</kw>
+<status status="PASS" starttime="20230131 13:38:10.144" endtime="20230131 13:38:37.495"/>
+</test>
+<doc>This file contains test case related to invalid login</doc>
+<status status="PASS" starttime="20230131 13:38:08.643" endtime="20230131 13:38:37.495"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
